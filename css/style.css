@@ -1,0 +1,402 @@
+@charset "utf-8";
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video
+{
+	max-width:100%;
+}
+
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img
+{
+	width:100%;
+}
+
+/*
+	Dreamweaver Fluid Grid Properties
+	----------------------------------
+	dw-num-cols-mobile:		4;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	12;
+	dw-gutter-percentage:	25;
+	
+	Inspiration from "Responsive Web Design" by Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	and Golden Grid System by Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+.fluid
+{
+	clear:both;
+	margin-left:0;
+	width:100%;
+	float:left;
+	display:block;
+}
+
+.fluidList
+{
+    list-style:none;
+    list-style-image:none;
+    margin:0;
+    padding:0;        
+}
+
+html, body
+{
+    height:100%;
+	margin:0;
+	padding:0;
+}
+
+html
+{
+	overflow-x:hidden; /*Sets the horizontal overflow to hidden so the page does not scroll from left to right*/
+}
+
+body
+{
+    background:url(../images/background.jpg) no-repeat;
+    min-height:100%;
+	background-color:#000000;
+    font-family:kingthings-calligraphica;
+	color:#ffffff;
+	-webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+	background-attachment:fixed;
+	background-position:inherit;
+}
+
+@font-face
+{
+    font-family:roboto;
+    src:url(../fonts/roboto-condensed-regular.ttf);
+}
+
+@font-face
+{
+    font-family:kingthings-calligraphica;
+    src:url(../fonts/kingthings-calligraphica.ttf);
+}
+
+/* Mobile Layout: 480px and below. */
+  
+.gridContainer
+{
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	padding-left:0%;
+	padding-right:0%;
+	clear:none;
+	float:none;
+}
+
+.urlstyle
+{
+	font-size:34px;
+}
+
+.column
+{
+  width:100%;
+  height:100%;
+  float:left;
+}
+
+.container
+{
+  text-align:center;
+  height:100%;
+  position:relative;
+}
+
+.right .container
+{
+  height:100%;
+}
+
+.vertical-align-wrap
+{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:table;
+}
+
+.vertical-align
+{
+  display:table-cell;
+}
+
+.vertical-align-middle
+{
+  vertical-align:middle;
+}
+
+.menuwrapper
+{
+	width:96%; /*Adjusts the width of the entire menu.*/
+	padding:25px 25px 25px 4px; /*Adjusts the padding around the menu starting from top, to the right, to the bottom, to the left.*/
+	list-style-type:none; /*Adds a list style type if needed.*/
+	text-align:center; /*Aligns the text within each button.*/
+	margin-left:auto; /*Margin-left and margin-right set to "auto" horizontally center the menu.*/
+	margin-right:auto; /*Margin-left and margin-right set to "auto" horizontally center the menu.*/
+	font-size:1.1em; /*Sets the font size for the menu.*/
+}
+
+.menuwrapper a
+{
+	display:block; /*Displays the menu as a block element (like <p>).*/
+	margin-bottom:10px; /*Creates separation between each menu button.*/
+}
+
+.menuwrapper li
+{
+	margin-left:2px; /*Helps reduce the width of the left side of each button.*/
+	margin-right:2px; /*Helps reduce the width of the right side of each button.*/
+	line-height:40px; /*Sets the overall height of each button.*/
+	
+	
+}
+
+.menuwrapper li a
+{
+	text-decoration:none;
+	color:#000000;
+	font-size:18px;
+	padding:7px 8px 7px 8px;
+	text-shadow:0px -1px 0px rgba(30, 30, 30, 0.8);
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius: 15px;
+	background:rgb(0, 255, 51);
+    background:-moz-linear-gradient(rgb(0, 255, 51) 30%, rgb(0, 153, 0) 70%);
+    background:-webkit-linear-gradient(rgb(0, 255, 51) 30%, rgb(0, 153, 0) 70%);
+    background:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0.3, rgb(0, 255, 51)), color-stop(0.7, rgb(0, 153, 0)));
+    background:-o-linear-gradient(rgb(0, 255, 51) 30%, rgb(0, 153, 0) 70%);
+    background:linear-gradient(rgb(0, 255, 51) 30%, rgb(0, 153, 0) 70%);
+	-webkit-box-shadow:2px 4px 3px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:2px 4px 3px rgba(50, 50, 50, 0.75);
+	box-shadow:2px 4px 3px rgba(50, 50, 50, 0.75);
+
+}
+
+.menuwrapper li a:visited
+{
+	background-color:#0166ff; /*Sets the background color of each button if the button was visited.*/
+	color:#000000; /*Sets the font color for each button if it was visited.*/
+}
+
+.menuwrapper li a:hover
+{
+	text-decoration:none;
+	color:#000000;
+	font-size:18px;
+	padding:7px 8px 7px 8px;
+	text-shadow:0px -1px 0px rgba(30, 30, 30, 0.8);
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius: 15px;
+	background:rgb(153, 255, 153);
+    background:-moz-linear-gradient(rgb(179, 223, 177) 30%, rgb(155, 248, 151) 70%);
+    background:-webkit-linear-gradient(rgb(179, 223, 177) 30%, rgb(155, 248, 151) 70%);
+    background:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0.3, rgb(179, 223, 177)), color-stop(0.7, rgb(155, 248, 151)));
+    background:-o-linear-gradient(rgb(179, 223, 177) 30%, rgb(155, 248, 151) 70%);
+    background:linear-gradient(rgb(179, 223, 177) 30%, rgb(155, 248, 151) 70%);
+	-webkit-box-shadow:2px 4px 3px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:2px 4px 3px rgba(50, 50, 50, 0.75);
+	box-shadow:2px 4px 3px rgba(50, 50, 50, 0.75);
+}
+
+#www
+{
+	font-size:1.3em;
+	color:#FF0004;
+}
+
+#info
+{
+	font-size:1.7em;
+	color:#FFFD00;
+}
+
+.zeroMargin_mobile
+{
+    margin-left:0;
+}
+.hide_mobile
+{
+    display:none;
+}
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (min-width: 481px) {
+
+.gridContainer
+{
+	width:100%;
+	padding-left:0%;
+	padding-right:0%;
+	clear:none;
+	float:none;
+	margin-left:auto;
+}
+
+.urlstyle
+{
+	font-size:54px;
+}
+
+.column
+{
+  width:100%;
+  height:100%;
+  float:left;
+
+}
+
+.container
+{
+  text-align:center;
+  height:100%;
+  position:relative;
+}
+
+.right .container
+{
+  height:100%;
+}
+
+.vertical-align-wrap
+{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:table;
+}
+
+.vertical-align
+{
+  display:table-cell;
+}
+
+.vertical-align-middle
+{
+  vertical-align:middle;
+}
+
+.menuwrapper
+{
+	width:400px; /*Adjusts the width of the entire menu.*/
+}
+
+.menuwrapper li a
+{
+	font-size:23px;
+	padding:8px 8px 8px 8px;
+}
+
+.menuwrapper li a:hover
+{
+	font-size:23px;
+	padding:8px 8px 8px 8px;
+}
+
+#www
+{
+	font-size:2.1em;
+}
+
+#info
+{
+	font-size:2.1em;
+}
+	
+.zeroMargin_tablet
+{
+    margin-left:0;
+}
+
+.hide_tablet
+{
+    display:none;
+}
+
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media only screen and (min-width: 769px) {
+
+.gridContainer
+{
+	width:100%;
+	max-width:1232px;
+	padding-left:0%;
+	padding-right:0%;
+	margin:auto;
+	clear:none;
+	float:none;
+	margin-left:auto;
+}
+
+.urlstyle
+{
+	font-size:86px;
+}
+
+.column
+{
+  width:100%;
+  height:100%;
+  float:left;
+}
+
+.container
+{
+  text-align:center;
+  height:100%;
+  position:relative;
+}
+
+.right .container
+{
+  height:100%;
+}
+
+.vertical-align-wrap
+{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:table;
+}
+
+.vertical-align
+{
+  display:table-cell;
+}
+
+.vertical-align-middle
+{
+  vertical-align:middle;
+}
+	
+.zeroMargin_desktop
+{
+    margin-left:0;
+}
+.hide_desktop
+{
+    display:none;
+}
+
+}
